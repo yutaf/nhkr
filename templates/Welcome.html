@@ -1,0 +1,11 @@
+{% extends "Layout.html" %}
+{% block header %}
+    {% include 'HeaderWelcome.html' %}
+{% endblock %}
+{% block content %}
+    <ul class="item rows-center switch_content_parent">
+        <li class="switch_content switch_content_first <%= @switch_content_signup_selected %>"><%= t 'signup' %></li>
+        <li class="switch_content_separator">|</li>
+        <li class="switch_content <%= @switch_content_login_selected %>"><%= t 'login' %></li>
+    </ul>
+{% endblock %}
