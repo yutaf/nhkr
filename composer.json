@@ -1,5 +1,5 @@
 {
-  "name": "yutaf/nofw",
+  "name": "yutaf/nhkr",
   "description": "NHK program reminder",
   "license": "MIT",
   "require" : {
@@ -17,7 +17,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Example\\": "src/"
+      "App\\": "src/"
     }
   }
 }

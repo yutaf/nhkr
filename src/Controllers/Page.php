@@ -1,11 +1,11 @@
 <?php
 
-namespace Example\Controllers;
+namespace App\Controllers;
 
 use Http\Response;
-use Example\Page\InvalidPageException;
-use Example\Page\PageReader;
-use Example\Template\FrontendRenderer;
+use App\Page\InvalidPageException;
+use App\Page\PageReader;
+use App\Template\FrontendRenderer;
 
 class Page
 {

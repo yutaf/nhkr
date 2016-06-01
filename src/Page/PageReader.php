@@ -1,6 +1,6 @@
 <?php
 
-namespace Example\Page;
+namespace App\Page;
 
 interface PageReader
 {

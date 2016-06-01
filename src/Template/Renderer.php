@@ -1,6 +1,6 @@
 <?php
 
-namespace Example\Template;
+namespace App\Template;
 
 interface Renderer
 {
