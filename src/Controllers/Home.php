@@ -2,32 +2,12 @@
 
 namespace Src\Controllers;
 
-use Http\Request;
-use Http\Response;
-use Src\Template\FrontendRenderer;
-
-class Home
+class Home extends Application
 {
-    private $request;
-    private $response;
-    private $renderer;
-
-    public function __construct(Request $request, Response $response, FrontendRenderer $renderer)
-    {
-        $this->request = $request;
-        $this->response = $response;
-        $this->renderer = $renderer;
-    }
-
     public function show()
     {
-        //TODO
-        $protocol = 'http://';
-        if(stripos($_SERVER['SERVER_PROTOCOL'],'https') === true) {
-            $protocol = 'https://';
-        }
-        $redirect_url = "{$protocol}{$_SERVER['HTTP_HOST']}/welcome";
-        header("Location: {$redirect_url}", true);
+        //TODO login check
+        $this->redirectTo('/welcome');
         exit;
 //        $data = [
 //            'name' => $this->request->getParameter('name', 'stranger'),
