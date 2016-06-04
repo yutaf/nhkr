@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controllers;
+namespace Src\Controllers;
 
 use Http\Request;
 use Http\Response;
-use App\Template\FrontendRenderer;
+use Src\Template\FrontendRenderer;
 
 class Homepage
 {

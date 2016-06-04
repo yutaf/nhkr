@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Page;
+namespace Src\Page;
 
 use Exception;
 

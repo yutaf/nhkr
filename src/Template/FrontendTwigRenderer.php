@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Template;
+namespace Src\Template;
 
-use App\Menu\MenuReader;
+use Src\Menu\MenuReader;
 
 class FrontendTwigRenderer implements FrontendRenderer
 {

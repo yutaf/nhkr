@@ -1,8 +1,8 @@
 <?php
 
 return [
-    ['GET', '/', ['App\Controllers\Home', 'show']],
-//    ['GET', '/', ['App\Controllers\Homepage', 'show']],
-    ['GET', '/welcome', ['App\Controllers\Welcome', 'show']],
-    ['GET', '/{slug}', ['App\Controllers\Page', 'show']],
+    ['GET', '/', ['Src\Controllers\Home', 'show']],
+//    ['GET', '/', ['Src\Controllers\Homepage', 'show']],
+    ['GET', '/welcome', ['Src\Controllers\Welcome', 'show']],
+    ['GET', '/{slug}', ['Src\Controllers\Page', 'show']],
 ];
