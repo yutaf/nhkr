@@ -12,7 +12,7 @@ class Home extends Application
 //        $data = [
 //            'name' => $this->request->getParameter('name', 'stranger'),
 //        ];
-//        $html = $this->renderer->render('Homepage', $data);
+//        $html = $this->renderer->render('Home', $data);
 //        $this->response->setContent($html);
     }
 }
