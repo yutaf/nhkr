@@ -33,6 +33,16 @@ $injector->delegate('Twig_Environment', function() use ($injector) {
 
 $injector->alias('Src\Template\FrontendRenderer', 'Src\Template\FrontendTwigRenderer');
 
+$injector->share('Symfony\Component\Translation\Translator');
+$injector->delegate('Symfony\Component\Translation\Translator', function() use ($injector) {
+    $translator = new Symfony\Component\Translation\Translator('en_GB', new \Symfony\Component\Translation\MessageSelector());
+    $translator->setFallbackLocales(['ja_JP']);
+    $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
+    $translator->addResource('yaml',  __DIR__.'/../locales/en.yml', 'en');
+
+    return $translator;
+});
+
 $injector->alias('Src\Menu\MenuReader', 'Src\Menu\ArrayMenuReader');
 $injector->share('Src\Menu\ArrayMenuReader');
 
