@@ -3,11 +3,9 @@
     {% include 'HeaderWelcome.html' %}
 {% endblock %}
 {% block content %}
-    <p>{{ 'foo'|trans }}</p>
-    <p>{{ 'bar.baz'|trans }}</p>
     <ul class="item rows-center switch_content_parent">
-        <li class="switch_content switch_content_first <%= @switch_content_signup_selected %>"><%= t 'signup' %></li>
+        <li class="switch_content switch_content_first <%= @switch_content_signup_selected %>">{{ 'signup'|trans }}</li>
         <li class="switch_content_separator">|</li>
-        <li class="switch_content <%= @switch_content_login_selected %>"><%= t 'login' %></li>
+        <li class="switch_content <%= @switch_content_login_selected %>">{{ 'login'|trans }}</li>
     </ul>
 {% endblock %}

@@ -1,3 +1,4 @@
-foo: FOO
-bar:
-  baz: Hello
+signup: sign up
+login: login
+welcome:
+  desc: Notifies you of NHK's program updates
