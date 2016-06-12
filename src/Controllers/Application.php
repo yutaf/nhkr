@@ -12,7 +12,7 @@ abstract class Application
     protected $response;
     protected $renderer;
 
-    const SITE_NAME = 'NHK Reminder';
+    const SITE_NAME = 'NHK Notifier';
 
     public function __construct(Request $request, Response $response, FrontendRenderer $renderer)
     {
