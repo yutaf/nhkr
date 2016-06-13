@@ -26,7 +26,10 @@ $injector->alias('Src\Template\Renderer', 'Src\Template\TwigRenderer');
 //]);
 
 $injector->delegate('Twig_Environment', function() use ($injector) {
-    $loader = new Twig_Loader_Filesystem(__DIR__.'/../templates');
+    $loader = new Twig_Loader_Filesystem([
+        __DIR__.'/../templates',
+        __DIR__ . '/../vendor/symfony/twig-bridge/Resources/views/Form',
+    ]);
     $twig = new Twig_Environment($loader);
     return $twig;
 });
@@ -46,6 +49,13 @@ $injector->delegate('Symfony\Component\Translation\Translator', function() use (
     $translator->addResource('yaml',  __DIR__.'/../locales/ja.yml', 'ja');
 
     return $translator;
+});
+
+$injector->share('Symfony\Component\Security\Csrf\CsrfTokenManager');
+
+$injector->delegate('Symfony\Bridge\Twig\Form\TwigRendererEngine', function() use ($injector) {
+    $formEngine = new Symfony\Bridge\Twig\Form\TwigRendererEngine(['form_div_layout.html.twig']);
+    return $formEngine;
 });
 
 $injector->alias('Src\Menu\MenuReader', 'Src\Menu\ArrayMenuReader');
