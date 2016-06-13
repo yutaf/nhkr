@@ -13,9 +13,13 @@ class TwigRenderer implements Renderer
 
     public function __construct(Twig_Environment $renderer, Translator $translator, TwigRendererEngine $formEngine, CsrfTokenManager $csrfTokenManager)
     {
-        $renderer->addExtension(new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator));
+        $translationExtension = new \Symfony\Bridge\Twig\Extension\TranslationExtension($translator);
+        $renderer->addExtension($translationExtension);
         $formEngine->setEnvironment($renderer);
-        $renderer->addExtension(new \Symfony\Bridge\Twig\Extension\FormExtension(new \Symfony\Bridge\Twig\Form\TwigRenderer($formEngine, $csrfTokenManager)));
+
+        $formTwigRenderer = new \Symfony\Bridge\Twig\Form\TwigRenderer($formEngine, $csrfTokenManager);
+        $formExtension = new \Symfony\Bridge\Twig\Extension\FormExtension($formTwigRenderer);
+        $renderer->addExtension($formExtension);
 
         $this->renderer = $renderer;
     }
