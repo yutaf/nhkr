@@ -26,9 +26,14 @@ $injector->alias('Src\Template\Renderer', 'Src\Template\TwigRenderer');
 //]);
 
 $injector->delegate('Twig_Environment', function() use ($injector) {
+    // the path to TwigBridge library so Twig can locate the
+    // form_div_layout.html.twig file
+    $appVariableReflection = new \ReflectionClass('\Symfony\Bridge\Twig\AppVariable');
+    $vendorTwigBridgeDir = dirname($appVariableReflection->getFileName());
+
     $loader = new Twig_Loader_Filesystem([
         __DIR__.'/../templates',
-        __DIR__ . '/../vendor/symfony/twig-bridge/Resources/views/Form',
+        $vendorTwigBridgeDir.'/Resources/views/Form',
     ]);
     $twig = new Twig_Environment($loader);
     return $twig;
