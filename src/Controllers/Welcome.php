@@ -13,23 +13,17 @@ class Welcome extends Application
     public function show()
     {
         $form = $this->formFactory->get()->createBuilder()
-            ->add('firstName', TextType::class, array(
+            ->add('email', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 4)),
                 ),
             ))
-            ->add('lastName', TextType::class, array(
+            ->add('password', TextType::class, array(
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 4)),
                 ),
-            ))
-            ->add('gender', ChoiceType::class, array(
-                'choices' => array('m' => 'Male', 'f' => 'Female'),
-            ))
-            ->add('newsletter', CheckboxType::class, array(
-                'required' => false,
             ))
             ->getForm();
         $data = [
