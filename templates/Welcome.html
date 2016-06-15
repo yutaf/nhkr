@@ -8,6 +8,10 @@
         <li class="switch_content_separator">|</li>
         <li class="switch_content <%= @switch_content_login_selected %>">{{ 'login'|trans }}</li>
     </ul>
-    {{ form_widget(form) }}
-    <input type="submit" />
+    <form action="/login" method="post">
+        {{ form_widget(form) }}
+        <div class="item buttons">
+            <input type="submit" class="btn"/>
+        </div>
+    </form>
 {% endblock %}
