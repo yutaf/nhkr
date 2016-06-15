@@ -245,16 +245,13 @@ ul.menu {
     #loginBtn img {
       width: 100%; } }
 
-.switch_content_parent {
+.switch_parent {
   margin-bottom: 20px;
   font-size: 1.175rem; }
-  .switch_content_parent li {
+  .switch_parent li {
     margin-right: 20px; }
 
-.switch_content {
-  color: #000; }
-
-.switch_content_selected {
+.switch_selected {
   color: #999; }
 
 input#artist_name {

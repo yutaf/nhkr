@@ -7,9 +7,9 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
-class Welcome extends Application
+class Login extends Application
 {
-    public function signup()
+    public function login()
     {
         $form = $this->getForm();
         if(isset($form, $_POST[$form->getName()])) {
@@ -23,7 +23,7 @@ class Welcome extends Application
         $data = [
             'form' => $form->createView(),
         ];
-        $html = $this->renderer->render('Welcome', $data);
+        $html = $this->renderer->render('Login', $data);
         $this->response->setContent($html);
     }
 
@@ -33,7 +33,7 @@ class Welcome extends Application
         $data = [
             'form' => $form->createView(),
         ];
-        $html = $this->renderer->render('Welcome', $data);
+        $html = $this->renderer->render('Login', $data);
         $this->response->setContent($html);
     }
 
@@ -52,7 +52,13 @@ class Welcome extends Application
                     new Length(array('min' => 6)),
                 ),
             ))
-            ->getForm()
+            ->add('passwordConfirmation', PasswordType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                    new Length(array('min' => 6)),
+                ),
+            ))
+            ->getForm();
         ;
 
         return $form;
