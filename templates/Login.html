@@ -4,11 +4,11 @@
 {% endblock %}
 {% block content %}
     <ul class="item rows-center switch_parent">
-        <li><a href="#" class="switch_selected">{{ 'signup'|trans }}</a></li>
+        <li><a href="/" class="">{{ 'signup'|trans }}</a></li>
         <li>|</li>
-        <li><a href="/login" class="">{{ 'login'|trans }}</a></li>
+        <li><a href="#" class="switch_selected">{{ 'login'|trans }}</a></li>
     </ul>
-    <form action="/" method="post">
+    <form action="/login" method="post">
         {{ form_widget(form) }}
         <div class="item buttons">
             <input type="submit" class="btn"/>
