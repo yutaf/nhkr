@@ -4,14 +4,23 @@
 {% endblock %}
 {% block content %}
     <ul class="item rows-center switch_content_parent">
-        <li class="switch_content switch_content_first <%= @switch_content_signup_selected %>">{{ 'signup'|trans }}</li>
-        <li class="switch_content_separator">|</li>
-        <li class="switch_content <%= @switch_content_login_selected %>">{{ 'login'|trans }}</li>
+        <li><a href="#" class="switch_content {{ switch_content_selected_signup }}">{{ 'signup'|trans }}</a></li>
+        <li>|</li>
+        <li><a href="#" class="switch_content {{ switch_content_selected_login }}">{{ 'login'|trans }}</a></li>
     </ul>
-    <form action="/login" method="post">
-        {{ form_widget(form) }}
+    <form action="/signup" method="post" class="form {{ class_hide_signup }}">
+        {{ form_widget(form_signup) }}
         <div class="item buttons">
             <input type="submit" class="btn"/>
         </div>
     </form>
+    <form action="/login" method="post" class="form {{ class_hide_login }}">
+        {{ form_widget(form_login) }}
+        <div class="item buttons">
+            <input type="submit" class="btn"/>
+        </div>
+    </form>
+{% endblock %}
+{% block js_list %}
+    <script src="/js/switch_content.js"></script>
 {% endblock %}

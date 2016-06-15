@@ -301,32 +301,17 @@ ul.menu {
   }
 }
 
-.or-parent{
-  margin: 30px 0;
-}
-.or {
-  color: #666;
-  width: auto;
-  height: auto;
-  padding: 5px 20px;
-  font-size: 1.275rem;
-  border: 1px solid #DDD;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
-}
 .switch_content_parent {
   margin-bottom: 20px;
   font-size: 1.175rem;
-}
-.switch_content_separator {
-  margin: 0 20px;
+  li{
+    margin-right: 20px;
+  }
 }
 .switch_content{
-  cursor: pointer;
   color: #000;
 }
 .switch_content_selected {
-  cursor: default;
   color: #999;
 }
 
