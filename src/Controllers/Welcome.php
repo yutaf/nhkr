@@ -52,6 +52,12 @@ class Welcome extends Application
                     new Length(array('min' => 6)),
                 ),
             ))
+            ->add('passwordConfirmation', PasswordType::class, array(
+                'constraints' => array(
+                    new NotBlank(),
+                    new Length(array('min' => 6)),
+                ),
+            ))
             ->getForm()
         ;
 
