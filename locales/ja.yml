@@ -1,4 +1,8 @@
 signup: 新規登録
 login: ログイン
+form:
+  email: メールアドレス
+  password: パスワード
+  passwordConfirmation: パスワード確認
 welcome:
   desc: NHKの新着番組情報をお知らせ

@@ -41,12 +41,14 @@ class Login extends Application
     {
         $form = $this->formFactory->get()->createBuilder()
             ->add('email', TextType::class, array(
+                'label' => 'form.email',
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 4)),
                 ),
             ))
             ->add('password', PasswordType::class, array(
+                'label' => 'form.password',
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 6)),

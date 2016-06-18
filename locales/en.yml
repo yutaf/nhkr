@@ -1,4 +1,8 @@
 signup: sign up
 login: login
+form:
+  email: email
+  password: password
+  passwordConfirmation: password confirmation
 welcome:
   desc: Notifies you of NHK's program updates
