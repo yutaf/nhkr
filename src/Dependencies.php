@@ -55,8 +55,8 @@ $injector->delegate('Symfony\Component\Translation\Translator', function() use (
     $translator = new Symfony\Component\Translation\Translator($locale, new \Symfony\Component\Translation\MessageSelector());
     $translator->setFallbackLocales(['en']);
     $translator->addLoader('yaml', new Symfony\Component\Translation\Loader\YamlFileLoader());
-    $translator->addResource('yaml',  __DIR__.'/../locales/en.yml', 'en');
-    $translator->addResource('yaml',  __DIR__.'/../locales/ja.yml', 'ja');
+    $translator->addResource('yaml', __DIR__.'/../locales/en.yml', 'en');
+    $translator->addResource('yaml', __DIR__.'/../locales/ja.yml', 'ja');
 
     return $translator;
 });
