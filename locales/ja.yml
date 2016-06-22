@@ -1,8 +1,64 @@
 signup: 新規登録
 login: ログイン
-form:
+label:
   email: メールアドレス
+  area: 地域
   password: パスワード
   passwordConfirmation: パスワード確認
 welcome:
   desc: NHKの新着番組情報をお知らせ
+area:
+  sapporo: 札幌
+  hakodate: 函館
+  asahikawa: 旭川
+  obihiro: 帯広
+  kushiro: 釧路
+  kitami: 北見
+  muroran: 室蘭
+  aomori: 青森
+  morioka: 盛岡
+  sendai: 仙台
+  akita: 秋田
+  yamagata: 山形
+  fujishima: 福島
+  mito: 水戸
+  utsunomiya: 宇都宮
+  maebashi: 前橋
+  saitama: さいたま
+  chiba: 千葉
+  tokyo: 東京
+  yokohama: 横浜
+  niigata: 新潟
+  toyama: 富山
+  kanazawa: 金沢
+  fukui: 福井
+  koufu: 甲府
+  nagano: 長野
+  gifu: 岐阜
+  shizuoka: 静岡
+  nagoya: 名古屋
+  tsu: 津
+  otsu: 大津
+  kyoto: 京都
+  osaka: 大阪
+  kobe: 神戸
+  nara: 奈良
+  wakayama: 和歌山
+  tottori: 鳥取
+  matsue: 松江
+  okayama: 岡山
+  hiroshima: 広島
+  yamaguchi: 山口
+  tokushima: 徳島
+  takamatsu: 高松
+  matsuyama: 松山
+  kochi: 高知
+  fukuoka: 福岡
+  kitakyushu: 北九州
+  saga: 佐賀
+  nagasaki: 長崎
+  kumamoto: 熊本
+  oita: 大分
+  miyazaki: 宮崎
+  kagoshima: 鹿児島
+  okinawa: 沖縄

@@ -1,8 +1,64 @@
 signup: sign up
 login: login
-form:
+label:
   email: email
+  area: area
   password: password
   passwordConfirmation: password confirmation
 welcome:
   desc: Notifies you of NHK's program updates
+area:
+  sapporo: Sapporo
+  hakodate: Hakodate
+  asahikawa: Asahikawa
+  obihiro: Obihiro
+  kushiro: Kushiro
+  kitami: Kitami
+  muroran: Muroran
+  aomori: Aomori
+  morioka: Morioka
+  sendai: Sendai
+  akita: Akita
+  yamagata: Yamagata
+  fujishima: Fujishima
+  mito: Mito
+  utsunomiya: Utsunomiya
+  maebashi: Maebashi
+  saitama: Saitama
+  chiba: Chiba
+  tokyo: Tokyo
+  yokohama: Yokohama
+  niigata: Niigata
+  toyama: Toyama
+  kanazawa: Kanazawa
+  fukui: Fukui
+  koufu: Koufu
+  nagano: Nagano
+  gifu: Gifu
+  shizuoka: Shizuoka
+  nagoya: Nagoya
+  tsu: Tsu
+  otsu: Otsu
+  kyoto: Kyoto
+  osaka: Osaka
+  kobe: Kobe
+  nara: Nara
+  wakayama: Wakayama
+  tottori: Tottori
+  matsue: Matsue
+  okayama: Okayama
+  hiroshima: Hiroshima
+  yamaguchi: Yamaguchi
+  tokushima: Tokushima
+  takamatsu: Takamatsu
+  matsuyama: Matsuyama
+  kochi: Kochi
+  fukuoka: Fukuoka
+  kitakyushu: Kitakyushu
+  saga: Saga
+  nagasaki: Nagasaki
+  kumamoto: Kumamoto
+  oita: Oita
+  miyazaki: Miyazaki
+  kagoshima: Kagoshima
+  okinawa: Okinawa

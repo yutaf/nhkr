@@ -6,6 +6,7 @@ use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class Welcome extends Application
 {
@@ -39,23 +40,28 @@ class Welcome extends Application
 
     private function getForm()
     {
+        $areas = include(__DIR__.'/../../config/areas.php');
         $form = $this->formFactory->get()->createBuilder()
             ->add('email', TextType::class, array(
-                'label' => 'form.email',
+                'label' => 'label.email',
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 4)),
                 ),
             ))
+            ->add('area', ChoiceType::class, array(
+                'label' => 'label.area',
+                'choices'  => $areas,
+            ))
             ->add('password', PasswordType::class, array(
-                'label' => 'form.password',
+                'label' => 'label.password',
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 6)),
                 ),
             ))
             ->add('passwordConfirmation', PasswordType::class, array(
-                'label' => 'form.passwordConfirmation',
+                'label' => 'label.passwordConfirmation',
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 6)),
