@@ -9,6 +9,7 @@ use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 class Welcome extends Application
 {
@@ -58,19 +59,15 @@ class Welcome extends Application
                     new Choice(['choices' => $areas]),
                 ]
             ))
-            ->add('password', PasswordType::class, array(
-                'label' => 'label.password',
+            ->add('password', RepeatedType::class, array(
+                'type' => PasswordType::class,
+                'required' => true,
                 'constraints' => array(
                     new NotBlank(),
                     new Length(array('min' => 6)),
                 ),
-            ))
-            ->add('passwordConfirmation', PasswordType::class, array(
-                'label' => 'label.passwordConfirmation',
-                'constraints' => array(
-                    new NotBlank(),
-                    new Length(array('min' => 6)),
-                ),
+                'first_options'  => array('label' => 'label.password'),
+                'second_options' => array('label' => 'label.passwordConfirmation'),
             ))
             ->getForm()
         ;
