@@ -47,6 +47,7 @@ class Welcome extends Application
         $form = $this->formFactory->get()->createBuilder()
             ->add('email', EmailType::class, array(
                 'label' => 'label.email',
+                'required' => true,
                 'constraints' => array(
                     new NotBlank(),
                     new Email(),
@@ -55,6 +56,7 @@ class Welcome extends Application
             ->add('area', ChoiceType::class, array(
                 'label' => 'label.area',
                 'choices'  => $areas,
+                'required' => true,
                 'constraints' => [
                     new Choice(['choices' => $areas]),
                 ]
