@@ -5,6 +5,7 @@ namespace Src\Controllers;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Choice;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -53,6 +54,9 @@ class Welcome extends Application
             ->add('area', ChoiceType::class, array(
                 'label' => 'label.area',
                 'choices'  => $areas,
+                'constraints' => [
+                    new Choice(['choices' => $areas]),
+                ]
             ))
             ->add('password', PasswordType::class, array(
                 'label' => 'label.password',
