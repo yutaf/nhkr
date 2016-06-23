@@ -3,8 +3,9 @@
 namespace Src\Controllers;
 
 use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\NotBlank;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
@@ -42,11 +43,11 @@ class Welcome extends Application
     {
         $areas = include(__DIR__.'/../../config/areas.php');
         $form = $this->formFactory->get()->createBuilder()
-            ->add('email', TextType::class, array(
+            ->add('email', EmailType::class, array(
                 'label' => 'label.email',
                 'constraints' => array(
                     new NotBlank(),
-                    new Length(array('min' => 4)),
+                    new Email(),
                 ),
             ))
             ->add('area', ChoiceType::class, array(
