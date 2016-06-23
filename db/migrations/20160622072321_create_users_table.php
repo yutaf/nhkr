@@ -32,7 +32,7 @@ class CreateUsersTable extends AbstractMigration
         $table = $this->table('users');
         $table->addColumn('email', 'string')
             ->addColumn('password', 'string')
-            ->addColumn('area', 'integer', ['limit' => MysqlAdapter::INT_TINY, 'signed' => false])
+            ->addColumn('area', 'integer', ['limit' => MysqlAdapter::INT_SMALL, 'signed' => false])
             ->addColumn('locale', 'integer', ['limit' => MysqlAdapter::INT_TINY, 'signed' => false])
             ->addColumn('created', 'datetime')
             ->addColumn('modified', 'datetime')
