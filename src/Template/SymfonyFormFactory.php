@@ -23,8 +23,13 @@ class SymfonyFormFactory
             ->setTranslator($translator)
             ->setTranslationDomain('validators')
             ->getValidator();
+
+        // extensions
+        $validatorExtension = new ValidatorExtension($validator);
+        $csrfExtension = new CsrfExtension($csrfTokenManager, $translator, 'validators');
+
         $this->formFactory = Forms::createFormFactoryBuilder()
-            ->addExtensions([new CsrfExtension($csrfTokenManager), new ValidatorExtension($validator)])
+            ->addExtensions([$csrfExtension, $validatorExtension])
             ->getFormFactory();
     }
 
