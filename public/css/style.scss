@@ -7,6 +7,7 @@ body{
 ul{
   list-style-type: none;
 }
+
 input[type="text"], input[type="email"], input[type="password"], select {
   border: 1px solid #b8b8b8;
   padding: 5px 12px;
@@ -161,8 +162,8 @@ input.btn {
   flex-direction: column;
 }
 
-.notice {
-  color: #FF0000;
+.error {
+  color: #dc143c;
 }
 
 .hide {
@@ -226,6 +227,12 @@ input.btn {
 
 .subject {
   padding: 10px 0;
+}
+
+form{
+  div{
+    margin: 0 0 10px;
+  }
 }
 
 /////////////////////////

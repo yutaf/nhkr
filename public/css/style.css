@@ -140,8 +140,8 @@ input.btn {
   -webkit-flex-direction: column;
   flex-direction: column; }
 
-.notice {
-  color: #FF0000; }
+.error {
+  color: #dc143c; }
 
 .hide {
   display: none; }
@@ -195,6 +195,9 @@ input.btn {
 
 .subject {
   padding: 10px 0; }
+
+form div {
+  margin: 0 0 10px; }
 
 .menu-trigger,
 .menu-trigger span {
