@@ -5,6 +5,7 @@ namespace Src\Controllers;
 use Http\Request;
 use Http\Response;
 use Src\Template\FrontendRenderer;
+use Src\Template\SymfonyFormFactory;
 
 abstract class Application
 {
@@ -15,7 +16,7 @@ abstract class Application
 
     const SITE_NAME = 'NHK Notifier';
 
-    public function __construct(Request $request, Response $response, FrontendRenderer $renderer, \Src\Template\SymfonyFormFactory $formFactory)
+    public function __construct(Request $request, Response $response, FrontendRenderer $renderer, SymfonyFormFactory $formFactory)
     {
         $this->request = $request;
         $this->response = $response;
