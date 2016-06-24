@@ -9,7 +9,25 @@
         <li><a href="/login" class="">{{ 'login'|trans }}</a></li>
     </ul>
     <form action="/" method="post">
-        {{ form_widget(form) }}
+        {{ form_errors(form) }}
+
+        <!--email-->
+        {{ form_row(form.email) }}
+        <!--/email-->
+        <!--/area-->
+        <div>
+            {{ form_label(form.area) }}
+            {{ form_errors(form.area) }}
+            <div class="selectbox">
+                {{ form_widget(form.area) }}
+            </div>
+        </div>
+        <!--/area-->
+        <!--password-->
+        {{ form_row(form.password) }}
+        <!--/password-->
+
+        {{ form_widget(form._token) }}
         <div class="item buttons">
             <input type="submit" class="btn"/>
         </div>
