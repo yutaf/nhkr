@@ -14,8 +14,6 @@ abstract class Application
     protected $renderer;
     protected $formFactory;
 
-    const SITE_NAME = 'NHK Notifier';
-
     public function __construct(Request $request, Response $response, FrontendRenderer $renderer, SymfonyFormFactory $formFactory)
     {
         $this->request = $request;
