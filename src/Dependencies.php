@@ -1,5 +1,7 @@
 <?php
 
+use \Src\Constant\AppConst;
+
 $injector = new \Auryn\Injector;
 
 $injector->alias('Http\Request', 'Http\HttpRequest');
@@ -64,10 +66,10 @@ $injector->delegate('Symfony\Component\Translation\Translator', function() use (
 
     $translator->addLoader('xlf', new Symfony\Component\Translation\Loader\XliffFileLoader());
     // there are built-in translations for the core error messages
-    $translator->addResource('xlf', $vendorFormDir.'/Resources/translations/validators.en.xlf', 'en', 'validators');
-    $translator->addResource('xlf', $vendorValidatorDir.'/Resources/translations/validators.en.xlf', 'en', 'validators');
-    $translator->addResource('xlf', $vendorFormDir.'/Resources/translations/validators.ja.xlf', 'ja', 'validators');
-    $translator->addResource('xlf', $vendorValidatorDir.'/Resources/translations/validators.ja.xlf', 'ja', 'validators');
+    $translator->addResource('xlf', $vendorFormDir.'/Resources/translations/validators.en.xlf', 'en', AppConst::TRANSLATOR_DOMAIN_VALIDATOR);
+    $translator->addResource('xlf', $vendorValidatorDir.'/Resources/translations/validators.en.xlf', 'en', AppConst::TRANSLATOR_DOMAIN_VALIDATOR);
+    $translator->addResource('xlf', $vendorFormDir.'/Resources/translations/validators.ja.xlf', 'ja', AppConst::TRANSLATOR_DOMAIN_VALIDATOR);
+    $translator->addResource('xlf', $vendorValidatorDir.'/Resources/translations/validators.ja.xlf', 'ja', AppConst::TRANSLATOR_DOMAIN_VALIDATOR);
 
     return $translator;
 });
