@@ -1,6 +1,6 @@
 {
   "name": "yutaf/nhkr",
-  "description": "NHK program reminder",
+  "description": "Notify NHK program's update",
   "license": "MIT",
   "require" : {
     "php": ">=7.0.0",
