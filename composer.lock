@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4a7c6f7728e9af40e149d30f59cc293d",
-    "content-hash": "eac225d6e167a4c4bf718bac6f22ec6a",
+    "hash": "75ef8ce4d19cf59b72b50939aedc1cd0",
+    "content-hash": "3c4e9dab00f869c5ed060966e8f51aa4",
     "packages": [
         {
             "name": "hirak/prestissimo",
@@ -373,16 +373,16 @@
         },
         {
             "name": "robmorgan/phinx",
-            "version": "v0.6.1",
+            "version": "v0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/robmorgan/phinx.git",
-                "reference": "977d88bcbb017f602740c8feb18ab546f9c03ad9"
+                "reference": "35c4fdc26857d02d78080f68d4973993d77bd7a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/977d88bcbb017f602740c8feb18ab546f9c03ad9",
-                "reference": "977d88bcbb017f602740c8feb18ab546f9c03ad9",
+                "url": "https://api.github.com/repos/robmorgan/phinx/zipball/35c4fdc26857d02d78080f68d4973993d77bd7a8",
+                "reference": "35c4fdc26857d02d78080f68d4973993d77bd7a8",
                 "shasum": ""
             },
             "require": {
@@ -392,7 +392,7 @@
                 "symfony/yaml": "~2.8|~3.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^3.7|^4.0|^5.0"
+                "phpunit/phpunit": "^4.0|^5.0"
             },
             "bin": [
                 "bin/phinx"
@@ -435,7 +435,7 @@
                 "migrations",
                 "phinx"
             ],
-            "time": "2016-06-21 12:36:58"
+            "time": "2016-06-23 15:27:01"
         },
         {
             "name": "symfony/config",
