@@ -16,6 +16,10 @@ abstract class DataModel
 
     abstract function isValid();
 
+    public function __isset($prop) {
+        return isset($this->data[$prop]);
+    }
+
     public function __get($prop) {
         if (isset($this->data[$prop])) {
             return $this->data[$prop];
@@ -24,10 +28,6 @@ abstract class DataModel
         } else {
             throw new \InvalidArgumentException;
         }
-    }
-
-    public function __isset($prop) {
-        return isset($this->data[$prop]);
     }
 
     public function __set($prop, $val) {
