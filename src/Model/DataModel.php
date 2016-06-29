@@ -64,4 +64,8 @@ abstract class DataModel
                 return $this->data[$prop] = strval($val);
         }
     }
+
+    function toArray() {
+        return $this->data;
+    }
 }

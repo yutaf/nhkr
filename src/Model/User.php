@@ -2,6 +2,18 @@
 
 namespace Src\Model;
 
+/**
+ * Class User
+ * @package Src\Model
+ *
+ * @property Integer    $id
+ * @property String     $email
+ * @property String     $password
+ * @property Integer    $area
+ * @property Integer    $locale
+ * @property \DateTime  $created
+ * @property \DateTime  $modified
+ */
 class User extends DataModel
 {
     protected static $schema = array(

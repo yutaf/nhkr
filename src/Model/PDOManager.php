@@ -6,6 +6,10 @@ class PDOManager
 {
     private static $pdo = array();
 
+    /**
+     * @param null $env
+     * @return \PDO
+     */
     public static function getPDO($env=null) {
 //        static $pdo = array();
 
@@ -15,18 +19,20 @@ class PDOManager
             } else {
                 $conf = require 'db.conf.php';
             }
+
+            $options = array(
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_CLASS,
+            );
+            if(is_array($conf['options']) && count($conf['options'])>0) {
+                $options = array_merge($options, $conf['options']);
+            }
             self::$pdo[$env] = new \PDO(
                 $conf['dsn'],
                 $conf['user'],
                 $conf['pass'],
-                $conf['options'],
-                array(
-                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_CLASS,
-                )
+                $options
             );
-            //SQLiteで外部キー制約を有効にする
-//            $pdo[$env]->query('PRAGMA foreign_keys = ON');
         }
 
         return self::$pdo[$env];
