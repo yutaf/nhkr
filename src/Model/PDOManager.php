@@ -25,7 +25,8 @@ class PDOManager
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_CLASS,
             );
             if(is_array($conf['options']) && count($conf['options'])>0) {
-                $options = array_merge($options, $conf['options']);
+                // Do not use array_merge because array keys art going to be reset
+                $options = $options + $conf['options'];
             }
             self::$pdo[$env] = new \PDO(
                 $conf['dsn'],
