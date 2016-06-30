@@ -2,14 +2,14 @@
 
 namespace Src\Model;
 
+use Symfony\Component\Validator\Validation;
+
 class UserMapper extends DataMapper
 {
-    private $table = 'users';
-
     public function insert($data)
     {
         $stmt = $this->pdo->prepare("
-            INSERT INTO {$this->table} (email, password, area, locale, created, modified)
+            INSERT INTO users (email, password, area, locale, created, modified)
             VALUES (:email, :password, :area, :locale, :created, :modified)
         ");
         $stmt->bindParam(':email',      $email,     \PDO::PARAM_STR);
@@ -27,15 +27,27 @@ class UserMapper extends DataMapper
                 throw new \InvalidArgumentException;
             }
 
-            //TODO Validation
-
+            // Validation
+            $validator = Validation::createValidatorBuilder()
+                ->addMethodMapping('loadValidatorMetadata')
+                ->getValidator()
+                ;
+            $violations = $validator->validate($row);
+            if(count($violations)>0) {
+                $errors = [];
+                foreach($violations as $violation) {
+                    $errors[] = "`{$violation->getPropertyPath()}` {$violation->getMessage()}";
+                }
+                $error = implode("\n", $errors);
+                throw new \InvalidArgumentException($error);
+            }
 
             $email      = $row->email;
             $password   = $row->password;
             $area       = $row->area;
             $locale     = $row->locale;
-            $created    = $row->created->format(\DateTime::ISO8601);
-            $modified   = $row->modified->format(\DateTime::ISO8601);
+            $created    = $row->created->format('Y-m-d H:i:s');
+            $modified   = $row->modified->format('Y-m-d H:i:s');
 
             $stmt->execute();
 
