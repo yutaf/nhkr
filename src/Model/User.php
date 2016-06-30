@@ -2,6 +2,9 @@
 
 namespace Src\Model;
 
+use Symfony\Component\Validator\Constraints;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+
 /**
  * Class User
  * @package Src\Model
@@ -16,6 +19,14 @@ namespace Src\Model;
  */
 class User extends DataModel
 {
+    protected $id;
+    protected $email;
+    protected $password;
+    protected $area;
+    protected $locale;
+    protected $created;
+    protected $modified;
+
     protected static $schema = array(
         'id'        => self::INTEGER,
         'email'     => self::STRING,
