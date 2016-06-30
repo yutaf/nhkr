@@ -11,18 +11,15 @@ abstract class DataModel
     const STRING  = 'string';
     const DATETIME = 'dateTime';
 
-    protected $data = array();
     protected static $schema = array();
 
-    abstract function isValid();
-
     public function __isset($prop) {
-        return isset($this->data[$prop]);
+        return isset($this->$prop);
     }
 
     public function __get($prop) {
-        if (isset($this->data[$prop])) {
-            return $this->data[$prop];
+        if (isset($this->$prop)) {
+            return $this->$prop;
         } elseif (isset(static::$schema[$prop])) {
             return null;
         } else {
@@ -40,28 +37,28 @@ abstract class DataModel
 
         if ($schema === self::DATETIME) {
             if ($val instanceof \DateTime) {
-                $this->data[$prop] = $val;
+                $this->$prop = $val;
             } else {
-                $this->data[$prop] = new \DateTime($val);
+                $this->$prop = new \DateTime($val);
             }
             return true;
         }
 
         if ($type === $schema) {
-            $this->data[$prop] = $val;
+            $this->$prop = $val;
             return true;
         }
 
         switch ($schema) {
             case self::BOOLEAN:
-                return $this->data[$prop] = (bool)$val;
+                return $this->$prop = (bool)$val;
             case self::INTEGER:
-                return $this->data[$prop] = intval($val);
+                return $this->$prop = intval($val);
             case self::DOUBLE:
-                return $this->data[$prop] = floatval($val);
+                return $this->$prop = floatval($val);
             case self::STRING:
             default:
-                return $this->data[$prop] = strval($val);
+                return $this->$prop = strval($val);
         }
     }
 
