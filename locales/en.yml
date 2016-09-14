@@ -6,7 +6,7 @@ label:
   password: password
   passwordConfirmation: password confirmation
 welcome:
-  desc: Notifies you of NHK's program updates
+  desc:  sends NHK's program updates
 area:
   sapporo: Sapporo
   hakodate: Hakodate
